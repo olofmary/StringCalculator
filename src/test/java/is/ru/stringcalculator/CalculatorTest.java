@@ -29,4 +29,11 @@ public class CalculatorTest {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
+    @Test
+	public void testNewLineNumbers() {
+		assertEquals(3, Calculator.add("1\n2"));
+	}
+
+    
+
 }
