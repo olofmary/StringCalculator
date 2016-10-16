@@ -49,8 +49,8 @@ public class CalculatorTest {
 	public void testNegativeNumbers() throws RuntimeException{
 		try {
 			Calculator.add("-1,2");
-		} catch (RuntimeException e) {
-			exception = e;
+		} catch (RuntimeException ex) {
+			assertEquals("Negatives are not allowed: [-1]", ex.getMessage());
 
 		}
 	} 
