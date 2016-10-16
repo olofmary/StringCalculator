@@ -41,11 +41,21 @@ public class CalculatorTest {
 	} 
 
 	@Test
-	public void testNegativeNumbers() throws RuntimeException{
+	public void testNegativeNumber() throws RuntimeException{
 		Calculator.add("-1");
 	} 
 
-	
+	@Test
+	public void testNegativeNumbers() throws RuntimeException{
+		try {
+			Calculator.add("-1,2");
+		} catch (RuntimeException e) {
+			exception = e;
+
+		}
+	} 
+
+
 
 	/*@Test
     public void testNegativeNumbers(){
