@@ -6,10 +6,7 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
-		else if(text.contains(",")){
-			return sum(splitNumbers(text));
-		}
-		else if(text.contains("\n")){
+		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
 		}
 		else
@@ -25,13 +22,17 @@ public class Calculator {
 	}
       
     private static int sum(String[] numbers){
+    	int currNum = 0;
  	    int total = 0;
+
         for(String number : numbers){
-		    total += toInt(number);
+        	currNum = toInt(number);
+        	if(currNum < 1001){
+        		 total += currNum;
+        	}
+		 
 		}
 		return total;
     }
-
-
 
 }
