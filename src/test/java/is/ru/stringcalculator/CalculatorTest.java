@@ -3,6 +3,7 @@ package is.ru.stringcalculator;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
+
 public class CalculatorTest {
 
 	public static void main(String args[]) {
@@ -25,7 +26,7 @@ public class CalculatorTest {
 	}	
 
 	@Test
-    public void testMultipleNumbers(){
+    public void testMultipleNumbers() {
     	assertEquals(6, Calculator.add("1,2,3"));
     }
 
@@ -39,7 +40,22 @@ public class CalculatorTest {
 		assertEquals(2, Calculator.add("1001,2"));
 	} 
 
+	@Test
+	public void testNegativeNumbers() throws RuntimeException{
+		Calculator.add("-1");
+	} 
+
 	
+
+	/*@Test
+    public void testNegativeNumbers(){
+    	try {
+    		Calculator.add("-2, 1");
+    	} catch (RuntimeException e){
+    		assertEquals("Negatives are not allowed: -2", e.getMessage());
+    	}
+    }*/
+
 
 
 }

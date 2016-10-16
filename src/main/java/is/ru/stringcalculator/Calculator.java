@@ -21,9 +21,15 @@ public class Calculator {
 	    return numbers.split(",|\n");
 	}
       
-    private static int sum(String[] numbers){
+    private static int sum(String[] numbers) throws RuntimeException{
     	int currNum = 0;
  	    int total = 0;
+
+    	for(String number : numbers){
+    		if (toInt(number) < 0){
+    			throw new RuntimeException("Negatives are not allowed: ");
+    		}
+    	}
 
         for(String number : numbers){
         	currNum = toInt(number);
@@ -34,5 +40,22 @@ public class Calculator {
 		}
 		return total;
     }
+
+    /*private static void checkForNegativeNumbers (String text){
+
+    	String[] numbers = splitNumbers(text);
+    	List NegativeNumbers = new ArrayList<>();
+
+    	for (String number : numbers){
+    		if(toInt(number) < 0){
+    			NegativeNumbers.add(toInt(number));
+    		}
+    	}
+
+    	if (NegativeNumbers.length > 0){
+    		throw new RuntimeException ("Negatives are not allowed: ");
+    	}
+    }*/
+
 
 }
